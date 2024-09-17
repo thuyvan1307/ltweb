@@ -1,4 +1,4 @@
-package ltwebct5.iotstar.Model;
+package btltweb5.iosstar.Model;
 
 import java.sql.Date;
 
@@ -10,14 +10,31 @@ public class usermodel {
 	private String password ;
 	private String email;
 	private String fullname;
-	private String image;
+	private String avatar;
 	private String phone;
 	private int roleid;
 	private Date createDate;
 	public usermodel() {
 		super();
 	}
-	public usermodel(int id, String username, String password, String email, String fullname, String image,
+	
+	
+	
+	public usermodel(String username, String password, String email, String fullname, String phone, int roleid,
+			Date createDate) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.fullname = fullname;
+		this.phone = phone;
+		this.roleid = roleid;
+		this.createDate = createDate;
+	}
+
+
+
+	public usermodel(int id, String username, String password, String email, String fullname, String avatar,
 			String phone, int roleid, Date createDate) {
 		super();
 		this.id = id;
@@ -25,11 +42,12 @@ public class usermodel {
 		this.password = password;
 		this.email = email;
 		this.fullname = fullname;
-		this.image = image;
+		this.avatar = avatar;
 		this.phone = phone;
 		this.roleid = roleid;
 		this.createDate = createDate;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -60,11 +78,11 @@ public class usermodel {
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
 	}
-	public String getImage() {
-		return image;
+	public String getAvatar() {
+		return avatar;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setImage(String avatar) {
+		this.avatar = avatar;
 	}
 	public String getPhone() {
 		return phone;
@@ -87,7 +105,7 @@ public class usermodel {
 	@Override
 	public String toString() {
 		return "usermodel [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", fullname=" + fullname + ", image=" + image + ", phone=" + phone + ", roleid=" + roleid
+				+ ", fullname=" + fullname + ", image=" + avatar + ", phone=" + phone + ", roleid=" + roleid
 				+ ", createDate=" + createDate + "]";
 	}
 	
