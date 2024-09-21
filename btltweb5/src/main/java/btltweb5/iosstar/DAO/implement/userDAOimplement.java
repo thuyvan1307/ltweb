@@ -40,7 +40,7 @@ public class userDAOimplement extends DBConnectMySQL implements IUserDAO {
 
 	@Override
 	public usermodel findById(int id) {
-		 String query = "SELECT * FROM users where user_id = ? ";
+		 String query = "SELECT * FROM users where id = ? ";
 	        usermodel user = null;
 	        try {
 	            conn = DBConnectMySQL.getDatabaseConnection();
@@ -63,7 +63,7 @@ public class userDAOimplement extends DBConnectMySQL implements IUserDAO {
 	public void insert(usermodel user) {
 		 List<usermodel> users = findAll();
 	        String query = "insert into users (username, password, email,"
-	        		+ "fullname, avatar, role_id,phone,datecreate)"
+	        		+ "fullname, avatar, id,phone,datecreate)"
 	        		+ " values (?,?,?,?,?,?,?,?)";
 	        for (usermodel existingUser : users) {
 	            if (existingUser.getUsername().equals(user.getUsername())) {
@@ -91,7 +91,7 @@ public class userDAOimplement extends DBConnectMySQL implements IUserDAO {
 	
 	public void updatePassword(String email, String newPassword)
 	{
-	        String query = "update users set user_password = ? where user_email= ?";
+	        String query = "update users set password = ? where email= ?";
 	        	       
 	        try {
 	            conn = DBConnectMySQL.getDatabaseConnection();
@@ -130,7 +130,7 @@ public class userDAOimplement extends DBConnectMySQL implements IUserDAO {
 	@Override
 	public boolean checkExistEmail(String email) {
 		boolean duplicate = false;
-		String query = "select * from users where user_email = ?";
+		String query = "select * from users where email = ?";
 		try {
 		conn = DBConnectMySQL.getDatabaseConnection();
 		ps = conn.prepareStatement(query);
@@ -148,7 +148,7 @@ public class userDAOimplement extends DBConnectMySQL implements IUserDAO {
 	@Override
 	public boolean checkExistUsername(String username) {
 		boolean duplicate = false;
-		String query = "select * from users where user_name = ?";
+		String query = "select * from users where username = ?";
 		try {
 		conn = DBConnectMySQL.getDatabaseConnection();
 		ps = conn.prepareStatement(query);
@@ -167,7 +167,7 @@ public class userDAOimplement extends DBConnectMySQL implements IUserDAO {
 	@Override
 	public boolean checkExistPhone(String phone) {
 		boolean duplicate = false;
-		String query = "select * from users where user_phone = ?";
+		String query = "select * from users where phone = ?";
 		try {
 		conn = DBConnectMySQL.getDatabaseConnection();
 		ps = conn.prepareStatement(query);
