@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
      <!-- Begin Brands -->
-<%@ include file="/commons/web/slider.jsp" %>
+<%@ include file="/commons/web/slider.jsp"%>
     <!-- End Brands -->
     
     

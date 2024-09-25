@@ -37,7 +37,7 @@
                         <li>
                         <c:choose>
 							<c:when test="${empty sessionScope.account}">
-								<a href="${pageContext.request.contextPath}/Login">Login</a>
+								<a href="${pageContext.request.contextPath}/login">Login</a>
 									| <a href="${pageContext.request.contextPath}/register">Register</a>
 							</c:when>
 							<c:otherwise>
