@@ -1,48 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title> Đăng kí</title>
-</head>
-<body>
-<form action="register" style="border:1px solid #ccc" method="post">
-  <div class="container">
-  		<c:if test="${alert !=null}">
-		<h3 class="alert alert-danger">${alert}</h3>
+    
+      <!-- BEGIN CONTENT -->
+          <div class="col-md-9 col-sm-9">
+          <c:if test="${alert !=null}">
+<h3 class="alert alertdanger">${alert}</h3>
 </c:if>
-<section> </section>
-    <h1>Register</h1>
-    <p>Điền vàoooo.</p>
-    <hr>
+            <h1>Create an account</h1>
+            <div class="content-form-page">
+              <div class="row">
+                <div class="col-md-7 col-sm-7">
+                  <form  action="/btltweb5/register" method="post" class="form-horizontal" role="form">
+                    <fieldset>
+                      <legend>Your personal details</legend>
 
-    <label for="username"><b>UserName</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+                      <div class="form-group">
+                        <label for="username" class="col-lg-4 control-label">Username <span class="require">*</span></label>
+                        <div class="col-lg-8">
+                          <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="col-lg-4 control-label">Email <span class="require">*</span></label>
+                        <div class="col-lg-8">
+                          <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Your password</legend>
+                      <div class="form-group">
+                        <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
+                        <div class="col-lg-8">
+                          <input type="text" class="form-control" id="password" name="password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="confirm-password" class="col-lg-4 control-label">Confirm password <span class="require">*</span></label>
+                        <div class="col-lg-8">
+                          <input type="text" class="form-control" id="confirm-password" name="confirm-password">
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Newsletter</legend>
+                      <div class="checkbox form-group">
+                        <label>
+                          <div class="col-lg-4 col-sm-4">Singup for Newsletter</div>
+                          <div class="col-lg-8 col-sm-8">
+                            <input type="checkbox">
+                          </div>
+                        </label>
+                      </div>
+                    </fieldset>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
+                        <button type="submit" class="btn btn-primary">Create an account</button>
+						<button type="button" class="btn btn-default" onclick="location.href='${pageContext.request.contextPath}/login'">Cancel</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-4 col-sm-4 pull-right">
+                  <div class="form-info">
+                    <h2><em>Important</em> Information</h2>
+                    <p>Lorem ipsum dolor ut sit ame dolore  adipiscing elit, sed sit nonumy nibh sed euismod ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo quat.</p>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+                    <p>Duis autem vel eum iriure at dolor vulputate velit esse vel molestie at dolore.</p>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="email"><b>Full Name</b></label>
-    <input type="text" placeholder="Enter your full name" name="fullname" required>
-
-    <label for="email"><b>Phone</b></label>
-    <input type="text" placeholder="Enter your phone" name="phone" required>
-
-
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <a href="login.jsp"><button type="button" class="cancelbtn">Cancel</button> </a>
-      <button type="submit" class="register">Register</button>
-    </div>
-  </div>
-
-</form>
-
-
+                    <button type="button" class="btn btn-default">More details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END CONTENT -->
+    
+ 
 </body>
 </html>

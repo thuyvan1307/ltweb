@@ -4,4 +4,7 @@
 	<mapping path="/admin/*" name="admin" decorator="admin.jsp" />
 	<mapping path="/manager/*" name="manager" decorator="manager.jsp"/>
 	<mapping path="/v1/api/*" exclude="true" />
+	<mapping path="/home" decorator="web.jsp" />
+	
 </sitemesh> 
+
